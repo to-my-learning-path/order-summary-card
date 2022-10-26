@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+  background-color: var(--pale-blue);
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  max-width: 25rem;
+  background-color: white;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.07);
+}
+
+main > img {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card-content > *:not(:last-child) {
+  margin: 1rem auto;
+}
+
+.card-content {
+  padding: 0.5rem 2rem;
+}
+
+.card-content > h1 {
+  font-weight: var(--fw-900);
+  font-size: 1.8rem;
+  color: var(--dark-blue);
+  margin-top: 1.5rem !important;
+}
+
+.card-content > p {
+  color: var(--desaturated-blue);
+  line-height: 1.5rem;
+}
+
+.card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: var(--very-pale-blue);
+  border-radius: 1rem;
+}
+
+.card-plan {
+  text-align: left;
+  flex: 1;
+  margin: auto 1rem;
+}
+
+.card-plan > p:first-child {
+  font-weight: var(--fw-900);
+}
+
+.card-plan > p:last-child {
+  color: var(--desaturated-blue);
+}
+
+.card-detail > p {
+  font-weight: var(--fw-900);
+  font-size: 0.9rem;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.95rem 0;
+  font-weight: var(--fw-700);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button[data-type="proceed"] {
+  background-color: var(--bright-blue);
+  color: white;
+  box-shadow: 0 7px 14px 10px rgba(65, 69, 88, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.07);
+}
+
+button[data-type="cancel"] {
+  background-color: transparent;
+  color: var(--desaturated-blue);
+  margin-bottom: 1rem;
+}
+
+button[data-type="proceed"]:hover {
+  background-color: #766cea;
+}
+
+button[data-type="cancel"]:hover {
+  color: black;
+}
+
+.card-detail > p > a:hover {
+  text-decoration: none;
+  color: #766cea;
+}
+
+@media (max-width: 375px) {
+  main {
+    margin: 0 1rem;
+  }
+}
